@@ -1,0 +1,31 @@
+---
+- name: JSON | Set Test Value
+  ansible.builtin.set_fact:
+    json_test_value: |
+      {
+          "str_var": "Some string value",
+          "int_var": 123,
+          "bool_var": true,
+          "array": [
+              "item0",
+              "item1",
+              "item2"
+          ],
+          "struct_var": {
+              "a": "string",
+              "b": 12345,
+              "c": false
+          }
+      }
+
+- name: JSON | Parse string value to data structure
+  ansible.builtin.set_fact:
+    json_data: "{{ json_test_value | from_json }}"
+
+- name: JSON | Validate test values
+  ansible.builtin.assert:
+    that:
+      - json_data['int_var'] == 123
+      - json_data['array'][2] == "item2"
+      - not (json_data['struct_var']['c'] | bool)
+    fail_msg: "JSON validation failed"

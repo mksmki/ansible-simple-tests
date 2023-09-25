@@ -8,4 +8,8 @@
   tasks:
     - name: Run Basic Tests
       ansible.builtin.include_tasks:
-        file: "basic_tests.ansible.yaml"
+        file: "basic.ansible.yaml"
+
+    - name: Run JSON Tests
+      ansible.builtin.include_tasks:
+        file: "json.ansible.yaml"

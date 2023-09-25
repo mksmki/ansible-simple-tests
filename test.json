@@ -1,0 +1,15 @@
+{
+    "str_var": "Some string value",
+    "int_var": 123,
+    "bool_var": true,
+    "array": [
+        "item0",
+        "item1",
+        "item3"
+    ],
+    "struct_var": {
+        "a": "string",
+        "b": 12345,
+        "c": false
+    }
+}
