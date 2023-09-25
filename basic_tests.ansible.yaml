@@ -1,0 +1,7 @@
+---
+- name: Ping localhost
+  ansible.builtin.ping:
+
+- name: Print Ansible version
+  ansible.builtin.debug:
+    msg: "Running Ansible {{ ansible_version.major }}.{{ ansible_version.minor }}"

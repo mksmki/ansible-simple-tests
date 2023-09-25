@@ -1,0 +1,11 @@
+---
+- name: Simple Tests for Ansible
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  become: false
+
+  tasks:
+    - name: Run Basic Tests
+      ansible.builtin.include_tasks:
+        file: "basic_tests.ansible.yaml"
