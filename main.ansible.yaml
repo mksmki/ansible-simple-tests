@@ -13,3 +13,7 @@
     - name: Run JSON Tests
       ansible.builtin.include_tasks:
         file: "json.ansible.yaml"
+
+    - name: Run json_query filter tests
+      ansible.builtin.include_tasks:
+        file: "json_query_filter.ansible.yaml"

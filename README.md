@@ -33,8 +33,14 @@ $ source .venv/bin/activate
 (.venv) $ git clone https://github.com/mksmki/ansible-simple-tests.git
 ```
 
-### Run tests
+### Run tests in Virtual Environment
 
 ```bash
 (.venv) $ ansible-playbook main.ansible.yaml
+```
+
+### Run tests inside Network-EE docker container
+
+```bash
+docker run --rm -ti -v $(pwd):/runner quay.io/mksmki/network-ee ansible-playbook main.ansible.yaml
 ```
