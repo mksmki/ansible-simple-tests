@@ -1,6 +1,7 @@
 # directories
 .venv
 .vscode
+.ansible
 
 # files
 ansible.log
